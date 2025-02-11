@@ -1,0 +1,23 @@
+{
+    "version": 1,
+    "author": "Tiago Alcantara",
+    "editor": "wokwi",
+    "parts": [
+      {
+        "type": "board-pi-pico-w",
+        "id": "pico",
+        "top": -3.25,
+        "left": -44.45,
+        "attrs": { "builder": "pico-sdk" }
+      },
+      { "type": "wokwi-servo", "id": "servo1", "top": -21.2, "left": 76.8, "attrs": {} }
+    ],
+    "connections": [
+      [ "pico:GP0", "$serialMonitor:RX", "", [] ],
+      [ "pico:GP1", "$serialMonitor:TX", "", [] ],
+      [ "pico:GP22", "servo1:PWM", "cyan", [ "h29.11", "v-67.4" ] ],
+      [ "servo1:GND", "pico:GND.8", "black", [ "h-19.2", "v9.6" ] ],
+      [ "servo1:V+", "pico:3V3", "red", [ "h-28.8", "v9.7" ] ]
+    ],
+    "dependencies": {}
+  }
